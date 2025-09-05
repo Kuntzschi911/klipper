@@ -1,0 +1,503 @@
+-------------------- Log Start | Fri Sep  5 12:06:46 2025 --------------------
+platform: Linux-6.1.0-37-amd64-x86_64-with-glibc2.36
+data_path: /home/jkuntzsch/printer_data
+is_default_data_path: False
+config_file: /home/jkuntzsch/printer_data/config/moonraker.conf
+backup_config: /home/jkuntzsch/printer_data/config/.moonraker.conf.bkp
+startup_warnings: []
+verbose: False
+debug: False
+asyncio_debug: False
+is_backup_config: False
+is_python_package: False
+instance_uuid: fdeeaa8457c448e6801507d46110ba70
+unix_socket_path: /home/jkuntzsch/printer_data/comms/moonraker.sock
+structured_logging: False
+software_version: v0.9.3-102-gf20feff
+git_branch: master
+git_remote: origin
+git_repo_url: https://github.com/Arksine/moonraker
+modified_files: []
+unofficial_components: []
+log_file: /home/jkuntzsch/printer_data/logs/moonraker.log
+python_version: 3.11.2 (main, Apr 28 2025, 14:11:48) [GCC 12.2.0]
+launch_args: /home/jkuntzsch/moonraker-env/bin/python /home/jkuntzsch/moonraker/moonraker/moonraker.py -d /home/jkuntzsch/printer_data
+msgspec_enabled: True
+uvloop_enabled: True
+
+#################### Moonraker Configuration ####################
+
+[server]
+host = 0.0.0.0
+port = 7125
+klippy_uds_address = /home/jkuntzsch/printer_data/comms/klippy.sock
+
+[authorization]
+trusted_clients = 
+	192.168.0.0/16
+	10.0.0.0/8
+	127.0.0.0/8
+	169.254.0.0/16
+	172.16.0.0/12
+	192.168.0.0/16
+	FC00::/7
+	FE80::/10
+	::1/128
+cors_domains = 
+	*.lan
+	*.local
+	*://localhost
+	*://localhost:*
+	*://my.mainsail.xyz
+	*://app.fluidd.xyz
+
+[octoprint_compat]
+
+[history]
+
+[file_manager]
+enable_object_processing = True
+
+[update_manager]
+channel = dev
+refresh_interval = 168
+
+[update_manager client KAMP]
+type = git_repo
+path = ~/printer_data/config/KAMP/Configuration
+origin = https://github.com/kyleisah/Klipper-Adaptive-Meshing-Purging.git
+primary_branch = main
+managed_services = klipper
+
+[update_manager octoeverywhere]
+type = git_repo
+channel = beta
+path = /home/jkuntzsch/octoeverywhere
+origin = https://github.com/QuinnDamerell/OctoPrint-OctoEverywhere.git
+env = /home/jkuntzsch/octoeverywhere-env/bin/python
+requirements = requirements.txt
+install_script = install.sh
+managed_services = 
+	octoeverywhere
+
+[announcements]
+subscriptions = 
+	octoeverywhere
+
+#################################################################
+All Configuration Files:
+/home/jkuntzsch/printer_data/config/moonraker.conf
+/home/jkuntzsch/printer_data/config/octoeverywhere-system.cfg
+#################################################################
+2025-09-05 14:06:46,593 [confighelper.py:read_file()] - Configuration File '/home/jkuntzsch/printer_data/config/moonraker.conf' parsed, total size: 1695 B
+2025-09-05 14:06:46,593 [server.py:add_log_rollover_item()] - 
+#################### Moonraker Configuration ####################
+
+[server]
+host = 0.0.0.0
+port = 7125
+klippy_uds_address = /home/jkuntzsch/printer_data/comms/klippy.sock
+
+[authorization]
+trusted_clients = 
+	192.168.0.0/16
+	10.0.0.0/8
+	127.0.0.0/8
+	169.254.0.0/16
+	172.16.0.0/12
+	192.168.0.0/16
+	FC00::/7
+	FE80::/10
+	::1/128
+cors_domains = 
+	*.lan
+	*.local
+	*://localhost
+	*://localhost:*
+	*://my.mainsail.xyz
+	*://app.fluidd.xyz
+
+[octoprint_compat]
+
+[history]
+
+[file_manager]
+enable_object_processing = True
+
+[update_manager]
+channel = dev
+refresh_interval = 168
+
+[update_manager client KAMP]
+type = git_repo
+path = ~/printer_data/config/KAMP/Configuration
+origin = https://github.com/kyleisah/Klipper-Adaptive-Meshing-Purging.git
+primary_branch = main
+managed_services = klipper
+
+[update_manager octoeverywhere]
+type = git_repo
+channel = beta
+path = /home/jkuntzsch/octoeverywhere
+origin = https://github.com/QuinnDamerell/OctoPrint-OctoEverywhere.git
+env = /home/jkuntzsch/octoeverywhere-env/bin/python
+requirements = requirements.txt
+install_script = install.sh
+managed_services = 
+	octoeverywhere
+
+[announcements]
+subscriptions = 
+	octoeverywhere
+
+#################################################################
+All Configuration Files:
+/home/jkuntzsch/printer_data/config/moonraker.conf
+/home/jkuntzsch/printer_data/config/octoeverywhere-system.cfg
+#################################################################
+2025-09-05 14:06:46,915 [server.py:load_component()] - Component (secrets) loaded
+2025-09-05 14:06:46,930 [server.py:load_component()] - Component (template) loaded
+2025-09-05 14:06:46,954 [server.py:load_component()] - Component (klippy_connection) loaded
+2025-09-05 14:06:48,059 [application.py:__init__()] - Detected Tornado Version 6.5.1
+2025-09-05 14:06:48,065 [server.py:load_component()] - Component (application) loaded
+2025-09-05 14:06:48,088 [server.py:load_component()] - Component (websockets) loaded
+2025-09-05 14:06:48,113 [server.py:add_log_rollover_item()] - Loading Sqlite database provider. Sqlite Version: 3.40.1
+2025-09-05 14:06:48,118 [server.py:add_log_rollover_item()] - Unsafe Shutdown Count: 1
+2025-09-05 14:06:48,120 [server.py:load_component()] - Component (database) loaded
+2025-09-05 14:06:48,194 [server.py:load_component()] - Component (dbus_manager) loaded
+2025-09-05 14:06:48,222 [file_manager.py:__init__()] - Using File System Observer: inotify
+2025-09-05 14:06:48,253 [server.py:load_component()] - Component (file_manager) loaded
+2025-09-05 14:06:48,276 [database.py:register_table()] - Found registered table authorized_users
+2025-09-05 14:06:48,284 [authorization.py:__init__()] - Authorization Configuration Loaded
+Trusted Clients:
+192.168.0.0/16
+10.0.0.0/8
+127.0.0.0/8
+169.254.0.0/16
+172.16.0.0/12
+192.168.0.0/16
+fc00::/7
+fe80::/10
+::1/128
+CORS Domains:
+.*\.lan
+.*\.local
+.*://localhost
+.*://localhost:.*
+.*://my\.mainsail\.xyz
+.*://app\.fluidd\.xyz
+2025-09-05 14:06:48,285 [server.py:load_component()] - Component (authorization) loaded
+2025-09-05 14:06:48,289 [server.py:load_component()] - Component (klippy_apis) loaded
+2025-09-05 14:06:48,411 [server.py:add_log_rollover_item()] - 
+System Info:
+
+***python***
+  version: (3, 11, 2, 'final', 0)
+  version_string: 3.11.2 (main, Apr 28 2025, 14:11:48) [GCC 12.2.0]
+
+***cpu_info***
+  cpu_count: 1
+  bits: 64bit
+  processor: x86_64
+  cpu_desc: QEMU Virtual CPU version 2.5+
+  serial_number: 
+  hardware_desc: 
+  model: 
+  total_memory: 3988320
+  memory_units: kB
+
+***sd_info***
+
+***distribution***
+  name: Debian GNU/Linux 12 (bookworm)
+  id: debian
+  version: 12
+  version_parts: {'major': '12', 'minor': '', 'build_number': ''}
+  like: 
+  codename: bookworm
+  release_info: {}
+  kernel_version: 6.1.0-37-amd64
+
+***virtualization***
+  virt_type: none
+  virt_identifier: none
+
+***network***
+
+***canbus***
+
+***Allowed Services***
+  klipper_mcu
+  webcamd
+  MoonCord
+  KlipperScreen
+  moonraker-telegram-bot
+  moonraker-obico
+  sonar
+  crowsnest
+  octoeverywhere
+  ratos-configurator
+  mobileraker
+2025-09-05 14:06:48,414 [server.py:load_component()] - Component (shell_command) loaded
+2025-09-05 14:06:48,414 [machine.py:__init__()] - Using System Provider: systemd_dbus
+2025-09-05 14:06:48,419 [server.py:add_log_rollover_item()] - Module libcamera unavailable, import failed
+2025-09-05 14:06:48,421 [server.py:load_component()] - Component (machine) loaded
+2025-09-05 14:06:48,423 [server.py:load_component()] - Component (data_store) loaded
+2025-09-05 14:06:48,424 [proc_stats.py:__init__()] - Unable to find 'vcgencmd', throttle checking disabled
+2025-09-05 14:06:48,425 [server.py:load_component()] - Component (proc_stats) loaded
+2025-09-05 14:06:48,426 [server.py:load_component()] - Component (job_state) loaded
+2025-09-05 14:06:48,428 [server.py:load_component()] - Component (job_queue) loaded
+2025-09-05 14:06:48,430 [database.py:register_table()] - Found registered table job_history
+2025-09-05 14:06:48,430 [database.py:register_table()] - Found registered table job_totals
+2025-09-05 14:06:48,431 [server.py:load_component()] - Component (history) loaded
+2025-09-05 14:06:48,437 [server.py:load_component()] - Component (http_client) loaded
+2025-09-05 14:06:48,439 [server.py:load_component()] - Component (announcements) loaded
+2025-09-05 14:06:48,443 [server.py:load_component()] - Component (webcam) loaded
+2025-09-05 14:06:48,445 [server.py:load_component()] - Component (extensions) loaded
+2025-09-05 14:06:48,455 [server.py:load_component()] - Component (octoprint_compat) loaded
+2025-09-05 14:06:48,492 [base_deploy.py:log_info()] - Git Repo moonraker: Detected virtualenv: /home/jkuntzsch/moonraker-env
+2025-09-05 14:06:48,496 [base_deploy.py:log_info()] - Git Repo klipper: Detected virtualenv: /home/jkuntzsch/klippy-env
+2025-09-05 14:06:48,517 [base_deploy.py:log_info()] - Git Repo octoeverywhere: Option 'env' is deprecated, use 'virtualenv' instead.
+2025-09-05 14:06:48,518 [base_deploy.py:log_info()] - Git Repo octoeverywhere: Detected virtualenv: /home/jkuntzsch/octoeverywhere-env
+2025-09-05 14:06:48,521 [server.py:load_component()] - Component (update_manager) loaded
+2025-09-05 14:06:48,522 [server.py:_initialize_component()] - Performing Component Post Init: [database]
+2025-09-05 14:06:48,547 [server.py:_initialize_component()] - Performing Component Post Init: [dbus_manager]
+2025-09-05 14:06:48,551 [server.py:_initialize_component()] - Performing Component Post Init: [authorization]
+2025-09-05 14:06:48,553 [server.py:_initialize_component()] - Performing Component Post Init: [machine]
+2025-09-05 14:06:48,554 [machine.py:validation_init()] - Installation version in database up to date
+2025-09-05 14:06:48,716 [machine.py:check_virt_status()] - Virtualized Environment Detected, Type: vm id: kvm
+2025-09-05 14:06:48,732 [machine.py:_find_public_ip()] - Detected Local IP: 192.168.178.67
+2025-09-05 14:06:48,733 [webcam.py:_set_default_host_ip()] - Default public webcam address set: http://192.168.178.67
+2025-09-05 14:06:48,761 [server.py:add_log_rollover_item()] - 
+Systemd unit moonraker.service:
+unit_name: moonraker.service
+is_default: True
+manager: systemd
+Properties:
+**Requires=['sysinit.target', 'system.slice', 'network-online.target', '-.mount']
+**After=['systemd-journald.socket', 'sysinit.target', 'system.slice', 'network-online.target', 'basic.target', '-.mount']
+**SupplementaryGroups=['moonraker-admin']
+**EnvironmentFiles=/home/jkuntzsch/printer_data/systemd/moonraker.env
+**ExecStart=/home/jkuntzsch/moonraker-env/bin/python $MOONRAKER_ARGS
+**WorkingDirectory=/home/jkuntzsch/moonraker
+**FragmentPath=/etc/systemd/system/moonraker.service
+**Description=API Server for Klipper SV1
+**User=jkuntzsch
+2025-09-05 14:06:48,762 [server.py:_initialize_component()] - Performing Component Post Init: [proc_stats]
+2025-09-05 14:06:48,762 [server.py:_initialize_component()] - Performing Component Post Init: [history]
+2025-09-05 14:06:48,767 [server.py:_initialize_component()] - Performing Component Post Init: [announcements]
+2025-09-05 14:06:48,768 [server.py:_initialize_component()] - Performing Component Post Init: [webcam]
+2025-09-05 14:06:48,769 [webcam.py:_set_default_host_ip()] - Default public webcam address set: http://192.168.178.67
+2025-09-05 14:06:48,770 [server.py:_initialize_component()] - Performing Component Post Init: [klippy_connection]
+2025-09-05 14:06:48,770 [server.py:add_log_rollover_item()] - 
+Systemd unit klipper.service:
+unit_name: klipper.service
+is_default: True
+manager: systemd
+Properties:
+**Requires=['sysinit.target', 'system.slice', '-.mount']
+**After=['system.slice', 'basic.target', '-.mount', 'network-online.target', 'sysinit.target', 'systemd-journald.socket']
+**SupplementaryGroups=[]
+**EnvironmentFiles=/home/jkuntzsch/printer_data/systemd/klipper.env
+**ExecStart=/home/jkuntzsch/klippy-env/bin/python $KLIPPER_ARGS
+**WorkingDirectory=/home/jkuntzsch/klipper
+**FragmentPath=/etc/systemd/system/klipper.service
+**Description=Klipper 3D Printer Firmware SV1
+**User=jkuntzsch
+2025-09-05 14:06:48,770 [server.py:_initialize_component()] - Performing Component Post Init: [update_manager]
+2025-09-05 14:06:48,990 [base_deploy.py:log_info()] - PackageDeploy: PackageKit Provider Configured
+2025-09-05 14:06:49,034 [extensions.py:start_unix_server()] - Creating Unix Domain Socket at '/home/jkuntzsch/printer_data/comms/moonraker.sock'
+2025-09-05 14:06:49,035 [server.py:start_server()] - Starting Moonraker on (0.0.0.0, 7125), Hostname: klipper
+2025-09-05 14:06:49,035 [application.py:listen()] - SSL Certificate/Key not configured, aborting HTTPS Server startup
+2025-09-05 14:06:49,290 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2025-09-05 14:06:49,321 [server.py:add_log_rollover_item()] - 
+Systemd unit klipper.service:
+unit_name: klipper.service
+is_default: True
+manager: systemd
+Properties:
+**Requires=['system.slice', 'sysinit.target', '-.mount']
+**After=['network-online.target', '-.mount', 'basic.target', 'system.slice', 'systemd-journald.socket', 'sysinit.target']
+**SupplementaryGroups=[]
+**EnvironmentFiles=/home/jkuntzsch/printer_data/systemd/klipper.env
+**ExecStart=/home/jkuntzsch/klippy-env/bin/python $KLIPPER_ARGS
+**WorkingDirectory=/home/jkuntzsch/klipper
+**FragmentPath=/etc/systemd/system/klipper.service
+**Description=Klipper 3D Printer Firmware SV1
+**User=jkuntzsch
+2025-09-05 14:06:49,572 [server.py:add_log_rollover_item()] - Klipper Version: v0.13.0-177-gef4c76fe
+2025-09-05 14:06:49,664 [base_deploy.py:log_info()] - PackageKit: Detected 8 package updates:
+libssl3
+linux-image-amd64
+linux-libc-dev
+openssh-client
+openssh-server
+openssh-sftp-server
+openssl
+linux-image-6.1.0-38-amd64
+2025-09-05 14:06:49,674 [shell_command.py:_check_proc_success()] - Command (git -C /home/jkuntzsch/moonraker status --porcelain -b) successfully finished
+2025-09-05 14:06:49,682 [shell_command.py:_check_proc_success()] - Command (git -C /home/jkuntzsch/moonraker branch --list --no-color) successfully finished
+2025-09-05 14:06:49,694 [shell_command.py:_check_proc_success()] - Command (git -C /home/jkuntzsch/moonraker remote get-url origin) successfully finished
+2025-09-05 14:06:50,402 [shell_command.py:_check_proc_success()] - Command (git -C /home/jkuntzsch/moonraker fetch origin --prune --progress) successfully finished
+2025-09-05 14:06:50,410 [shell_command.py:_check_proc_success()] - Command (git -C /home/jkuntzsch/moonraker merge-base --is-ancestor HEAD origin/master) successfully finished
+2025-09-05 14:06:50,416 [shell_command.py:_check_proc_success()] - Command (git -C /home/jkuntzsch/moonraker rev-parse HEAD) successfully finished
+2025-09-05 14:06:50,425 [shell_command.py:_check_proc_success()] - Command (git -C /home/jkuntzsch/moonraker describe --always --tags --long --dirty --abbrev=8) successfully finished
+2025-09-05 14:06:50,431 [shell_command.py:_check_proc_success()] - Command (git -C /home/jkuntzsch/moonraker rev-parse origin/master) successfully finished
+2025-09-05 14:06:50,438 [shell_command.py:_check_proc_success()] - Command (git -C /home/jkuntzsch/moonraker describe origin/master --always --tags --long --abbrev=8) successfully finished
+2025-09-05 14:06:50,445 [shell_command.py:_check_proc_success()] - Command (git -C /home/jkuntzsch/moonraker rev-list HEAD..52e315868bd8c75f08d5994e3b959fbb53b100be --count) successfully finished
+2025-09-05 14:06:50,452 [shell_command.py:_check_proc_success()] - Command (git -C /home/jkuntzsch/moonraker log f20feff6c67884ff1253414506c43222e04c0460..origin/master --format="sha:%H%x1Dauthor:%an%x1Ddate:%ct%x1Dsubject:%s%x1Dmessage:%b%x1E" --max-count=100) successfully finished
+2025-09-05 14:06:50,468 [authorization.py:_check_trusted_connection()] - Trusted Connection Detected, IP: 127.0.0.1
+2025-09-05 14:06:50,471 [application.py:log_request()] - 101 GET /websocket (127.0.0.1) [_TRUSTED_USER_] 4.08ms
+2025-09-05 14:06:50,471 [websockets.py:open()] - Websocket Opened: ID: 140418591043280, Proxied: False, User Agent: , Host Name: 0.0.0.0
+2025-09-05 14:06:50,476 [websockets.py:_handle_identify()] - Websocket 140418591043280 Client Identified - Name: OctoEverywhere, Version: 4.3.13, Type: agent
+2025-09-05 14:06:50,479 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: server.database.get_item, Code: -32601, Message: Namespace webcams not found
+2025-09-05 14:06:50,481 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: server.database.get_item, Code: -32601, Message: Key 'cameras' in namespace 'fluidd' not found
+2025-09-05 14:06:50,492 [shell_command.py:_check_proc_success()] - Command (git -C /home/jkuntzsch/moonraker for-each-ref --count=100 --sort='-creatordate' --contains=HEAD --merged=origin/master --format='%(if)%(*objecttype)%(then)%(*objecttype) %(*objectname)%(else)%(objecttype) %(objectname)%(end) %(refname)' 'refs/tags') successfully finished
+2025-09-05 14:06:50,493 [git_deploy.py:log_repo_info()] - Git Repo moonraker Detected:
+Owner: Arksine
+Repository Name: moonraker
+Path: /home/jkuntzsch/moonraker
+Remote: origin
+Branch: master
+Remote URL: https://github.com/Arksine/moonraker
+Recovery URL: https://github.com/Arksine/moonraker
+Current Commit SHA: f20feff6c67884ff1253414506c43222e04c0460
+Upstream Commit SHA: 52e315868bd8c75f08d5994e3b959fbb53b100be
+Current Version: v0.9.3-102-gf20feff6
+Upstream Version: v0.9.3-104-g52e31586
+Rollback Commit: 72b89d905ee66b621ea3c4c633541e181822b448
+Rollback Branch: master
+Rollback Version: v0.9.3-97-g72b89d90
+Is Dirty: False
+Is Detached: False
+Is Shallow: False
+Commits Behind Count: 2
+Diverged: False
+Pinned Commit: None
+2025-09-05 14:06:50,493 [base_deploy.py:log_info()] - Git Repo moonraker: Channel: dev
+2025-09-05 14:06:50,493 [base_deploy.py:log_info()] - Git Repo moonraker: Validity check for git repo passed
+2025-09-05 14:06:50,515 [shell_command.py:_check_proc_success()] - Command (git -C /home/jkuntzsch/klipper status --porcelain -b) successfully finished
+2025-09-05 14:06:50,522 [shell_command.py:_check_proc_success()] - Command (git -C /home/jkuntzsch/klipper branch --list --no-color) successfully finished
+2025-09-05 14:06:50,533 [shell_command.py:_check_proc_success()] - Command (git -C /home/jkuntzsch/klipper remote get-url origin) successfully finished
+2025-09-05 14:06:51,146 [shell_command.py:_check_proc_success()] - Command (git -C /home/jkuntzsch/klipper fetch origin --prune --progress) successfully finished
+2025-09-05 14:06:51,154 [shell_command.py:_check_proc_success()] - Command (git -C /home/jkuntzsch/klipper merge-base --is-ancestor HEAD origin/master) successfully finished
+2025-09-05 14:06:51,160 [shell_command.py:_check_proc_success()] - Command (git -C /home/jkuntzsch/klipper rev-parse HEAD) successfully finished
+2025-09-05 14:06:51,204 [shell_command.py:_check_proc_success()] - Command (git -C /home/jkuntzsch/klipper describe --always --tags --long --dirty --abbrev=8) successfully finished
+2025-09-05 14:06:51,210 [shell_command.py:_check_proc_success()] - Command (git -C /home/jkuntzsch/klipper rev-parse origin/master) successfully finished
+2025-09-05 14:06:51,249 [shell_command.py:_check_proc_success()] - Command (git -C /home/jkuntzsch/klipper describe origin/master --always --tags --long --abbrev=8) successfully finished
+2025-09-05 14:06:51,257 [shell_command.py:_check_proc_success()] - Command (git -C /home/jkuntzsch/klipper rev-list HEAD..6c1a4a825d4e2fdbc0a5c9aed580e297c0d1601b --count) successfully finished
+2025-09-05 14:06:51,269 [shell_command.py:_check_proc_success()] - Command (git -C /home/jkuntzsch/klipper log ef4c76fe9494d0e011d6da5610fa868d2e702fff..origin/master --format="sha:%H%x1Dauthor:%an%x1Ddate:%ct%x1Dsubject:%s%x1Dmessage:%b%x1E" --max-count=100) successfully finished
+2025-09-05 14:06:51,300 [application.py:log_request()] - 101 GET /websocket?token= (127.0.0.1) [_TRUSTED_USER_] 17.07ms
+2025-09-05 14:06:51,301 [websockets.py:open()] - Websocket Opened: ID: 140418589468304, Proxied: False, User Agent: , Host Name: 127.0.0.1
+2025-09-05 14:06:51,306 [websockets.py:_handle_identify()] - Websocket 140418589468304 Client Identified - Name: KlipperScreen, Version: v0.4.6-11-g6b6f63b, Type: display
+2025-09-05 14:06:51,361 [shell_command.py:_check_proc_success()] - Command (git -C /home/jkuntzsch/klipper for-each-ref --count=100 --sort='-creatordate' --contains=HEAD --merged=origin/master --format='%(if)%(*objecttype)%(then)%(*objecttype) %(*objectname)%(else)%(objecttype) %(objectname)%(end) %(refname)' 'refs/tags') successfully finished
+2025-09-05 14:06:51,362 [git_deploy.py:log_repo_info()] - Git Repo klipper Detected:
+Owner: Klipper3d
+Repository Name: klipper
+Path: /home/jkuntzsch/klipper
+Remote: origin
+Branch: master
+Remote URL: https://github.com/Klipper3d/klipper
+Recovery URL: https://github.com/Klipper3d/klipper
+Current Commit SHA: ef4c76fe9494d0e011d6da5610fa868d2e702fff
+Upstream Commit SHA: 6c1a4a825d4e2fdbc0a5c9aed580e297c0d1601b
+Current Version: v0.13.0-177-gef4c76fe
+Upstream Version: v0.13.0-250-g6c1a4a82
+Rollback Commit: ef4c76fe9494d0e011d6da5610fa868d2e702fff
+Rollback Branch: master
+Rollback Version: v0.13.0-177-gef4c76fe
+Is Dirty: False
+Is Detached: False
+Is Shallow: False
+Commits Behind Count: 73
+Diverged: False
+Pinned Commit: None
+2025-09-05 14:06:51,362 [base_deploy.py:log_info()] - Git Repo klipper: Channel: dev
+2025-09-05 14:06:51,362 [base_deploy.py:log_info()] - Git Repo klipper: Validity check for git repo passed
+2025-09-05 14:06:51,362 [git_deploy.py:_check_repo_status()] - Git Repo KAMP: path '/home/jkuntzsch/printer_data/config/KAMP/Configuration' is not a valid git repo
+2025-09-05 14:06:51,362 [git_deploy.py:refresh_repo_state()] - Git Repo KAMP: Initialization failure
+Traceback (most recent call last):
+  File "/home/jkuntzsch/moonraker/moonraker/components/update_manager/git_deploy.py", line 328, in refresh_repo_state
+    self._verify_repo()
+  File "/home/jkuntzsch/moonraker/moonraker/components/update_manager/git_deploy.py", line 766, in _verify_repo
+    raise self.server.error(
+moonraker.utils.exceptions.ServerError: Git Repo KAMP: repo not initialized
+2025-09-05 14:06:51,362 [base_deploy.py:log_info()] - Git Repo KAMP: Channel: dev
+2025-09-05 14:06:51,362 [base_deploy.py:log_info()] - Git Repo KAMP: Repo validation check failed, updates disabled
+2025-09-05 14:06:51,397 [shell_command.py:_check_proc_success()] - Command (git -C /home/jkuntzsch/octoeverywhere status --porcelain -b) successfully finished
+2025-09-05 14:06:51,405 [shell_command.py:_check_proc_success()] - Command (git -C /home/jkuntzsch/octoeverywhere branch --list --no-color) successfully finished
+2025-09-05 14:06:51,420 [shell_command.py:_check_proc_success()] - Command (git -C /home/jkuntzsch/octoeverywhere remote get-url origin) successfully finished
+2025-09-05 14:06:52,003 [shell_command.py:_check_proc_success()] - Command (git -C /home/jkuntzsch/octoeverywhere fetch origin --prune --progress) successfully finished
+2025-09-05 14:06:52,010 [shell_command.py:_check_proc_success()] - Command (git -C /home/jkuntzsch/octoeverywhere merge-base --is-ancestor HEAD origin/master) successfully finished
+2025-09-05 14:06:52,016 [shell_command.py:_check_proc_success()] - Command (git -C /home/jkuntzsch/octoeverywhere rev-parse HEAD) successfully finished
+2025-09-05 14:06:52,023 [shell_command.py:_check_proc_success()] - Command (git -C /home/jkuntzsch/octoeverywhere describe --always --tags --long --dirty --abbrev=8) successfully finished
+2025-09-05 14:06:52,034 [shell_command.py:_check_proc_success()] - Command (git -C /home/jkuntzsch/octoeverywhere for-each-ref --count=100 --sort='-creatordate' --contains=HEAD --merged=origin/master --format='%(if)%(*objecttype)%(then)%(*objecttype) %(*objectname)%(else)%(objecttype) %(objectname)%(end) %(refname)' 'refs/tags') successfully finished
+2025-09-05 14:06:52,041 [shell_command.py:_check_proc_success()] - Command (git -C /home/jkuntzsch/octoeverywhere rev-list HEAD..258bb01f3bb49574c5dac650b3d780e4f79de5a5 --count) successfully finished
+2025-09-05 14:06:52,042 [git_deploy.py:log_repo_info()] - Git Repo octoeverywhere Detected:
+Owner: QuinnDamerell
+Repository Name: OctoPrint-OctoEverywhere
+Path: /home/jkuntzsch/octoeverywhere
+Remote: origin
+Branch: master
+Remote URL: https://github.com/QuinnDamerell/OctoPrint-OctoEverywhere.git
+Recovery URL: https://github.com/QuinnDamerell/OctoPrint-OctoEverywhere.git
+Current Commit SHA: 258bb01f3bb49574c5dac650b3d780e4f79de5a5
+Upstream Commit SHA: 258bb01f3bb49574c5dac650b3d780e4f79de5a5
+Current Version: 4.3.13-0-g258bb01f
+Upstream Version: 4.3.13
+Rollback Commit: 258bb01f3bb49574c5dac650b3d780e4f79de5a5
+Rollback Branch: master
+Rollback Version: 4.3.13-0-g258bb01f
+Is Dirty: False
+Is Detached: False
+Is Shallow: False
+Commits Behind Count: 0
+Diverged: False
+Pinned Commit: None
+2025-09-05 14:06:52,042 [base_deploy.py:log_info()] - Git Repo octoeverywhere: Channel: beta
+2025-09-05 14:06:52,042 [base_deploy.py:log_info()] - Git Repo octoeverywhere: Validity check for git repo passed
+2025-09-05 14:06:52,636 [application.py:log_request()] - 101 GET /websocket (127.0.0.1) [_TRUSTED_USER_] 0.93ms
+2025-09-05 14:06:52,638 [websockets.py:open()] - Websocket Opened: ID: 140418589406480, Proxied: False, User Agent: Python/3.11 websockets/10.1, Host Name: 127.0.0.1
+2025-09-05 14:08:18,611 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2025-09-05 14:08:18,612 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2025-09-05 14:08:18,613 [klippy_connection.py:_check_ready()] - 
+mcu 'mcu': Unable to connect
+Once the underlying issue is corrected, use the
+"FIRMWARE_RESTART" command to reset the firmware, reload the
+config, and restart the host software.
+Error configuring printer
+
+2025-09-05 15:11:48,560 [authorization.py:_prune_conn_handler()] - Trusted Connection Expired, IP: 127.0.0.1
+2025-09-05 16:39:02,732 [authorization.py:_check_trusted_connection()] - Trusted Connection Detected, IP: 192.168.178.21
+2025-09-05 16:39:02,734 [application.py:log_request()] - 101 GET /websocket (192.168.178.21) [_TRUSTED_USER_] 2.01ms
+2025-09-05 16:39:02,734 [websockets.py:open()] - Websocket Opened: ID: 140418589328336, Proxied: True, User Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36, Host Name: 192.168.178.67
+2025-09-05 16:39:02,901 [websockets.py:_handle_identify()] - Websocket 140418589328336 Client Identified - Name: OctoEverywhere-BrowserAgent, Version: 1.0.0, Type: web
+2025-09-05 16:39:13,710 [application.py:log_request()] - 101 GET /websocket (192.168.178.21) [_TRUSTED_USER_] 0.86ms
+2025-09-05 16:39:13,710 [websockets.py:open()] - Websocket Opened: ID: 140418589330768, Proxied: False, User Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36, Host Name: 192.168.178.67
+2025-09-05 16:39:13,722 [file_manager.py:get_file_list()] - Updating File List <config>...
+2025-09-05 16:39:15,585 [application.py:log_request()] - 101 GET /websocket (192.168.178.21) [_TRUSTED_USER_] 1.11ms
+2025-09-05 16:39:15,586 [websockets.py:open()] - Websocket Opened: ID: 140418589347408, Proxied: False, User Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36, Host Name: 192.168.178.67
+2025-09-05 16:39:15,589 [websockets.py:_handle_identify()] - Websocket 140418589347408 Client Identified - Name: mainsail, Version: 2.14.0, Type: web
+2025-09-05 16:39:19,456 [klippy_connection.py:_on_connection_closed()] - Klippy Connection Removed
+2025-09-05 16:39:19,478 [websockets.py:on_close()] - Websocket Closed: ID: 140418591043280 Close Code: 1000, Close Reason: None, Pong Time Elapsed: 18.30
+2025-09-05 16:39:20,481 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2025-09-05 16:39:21,480 [authorization.py:_check_trusted_connection()] - Trusted Connection Detected, IP: 127.0.0.1
+2025-09-05 16:39:21,480 [application.py:log_request()] - 101 GET /websocket (127.0.0.1) [_TRUSTED_USER_] 0.66ms
+2025-09-05 16:39:21,480 [websockets.py:open()] - Websocket Opened: ID: 140418587952144, Proxied: False, User Agent: , Host Name: 0.0.0.0
+2025-09-05 16:39:21,484 [websockets.py:_handle_identify()] - Websocket 140418587952144 Client Identified - Name: OctoEverywhere, Version: 4.3.13, Type: agent
+2025-09-05 16:39:21,488 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: server.database.get_item, Code: -32601, Message: Namespace webcams not found
+2025-09-05 16:39:21,489 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: server.database.get_item, Code: -32601, Message: Key 'cameras' in namespace 'fluidd' not found
+2025-09-05 16:39:23,510 [websockets.py:on_close()] - Websocket Closed: ID: 140418589330768 Close Code: None, Close Reason: None, Pong Time Elapsed: 9.80
+2025-09-05 16:39:23,516 [application.py:log_request()] - 101 GET /websocket (192.168.178.21) [_TRUSTED_USER_] 0.47ms
+2025-09-05 16:39:23,516 [websockets.py:open()] - Websocket Opened: ID: 140418589914320, Proxied: False, User Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36, Host Name: 192.168.178.67
+2025-09-05 16:39:23,529 [file_manager.py:get_file_list()] - Updating File List <config>...
+2025-09-05 16:39:23,553 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2025-09-05 16:39:23,554 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2025-09-05 16:39:23,562 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
+2025-09-05 16:39:24,536 [job_state.py:_handle_started()] - Job state initialized: standby
+2025-09-05 16:39:24,790 [klippy_connection.py:_check_ready()] - Klippy ready
+2025-09-05 16:39:24,876 [websockets.py:on_close()] - Websocket Closed: ID: 140418589914320 Close Code: None, Close Reason: None, Pong Time Elapsed: 1.36
+2025-09-05 16:39:24,881 [application.py:log_request()] - 101 GET /websocket (192.168.178.21) [_TRUSTED_USER_] 0.71ms
+2025-09-05 16:39:24,881 [websockets.py:open()] - Websocket Opened: ID: 140418589868368, Proxied: False, User Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36, Host Name: 192.168.178.67
+2025-09-05 16:39:24,899 [file_manager.py:get_file_list()] - Updating File List <config>...
+2025-09-05 16:39:25,539 [data_store.py:_init_sensors()] - Configuring available sensors: ['temperature_sensor mcu_temp', 'heater_bed', 'extruder']

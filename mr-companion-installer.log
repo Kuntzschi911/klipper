@@ -1,0 +1,228 @@
+2025-07-25 11:34:30.905768 [Info] - Starting Installer...
+2025-07-25 11:34:30.905800 [Debug] - Parsing install (bash) cmd line args.
+2025-07-25 11:34:30.906190 [Info] - Os Type Detected: PlatformType.DEBIAN
+2025-07-25 11:34:30.906204 [Debug] - Validating args
+2025-07-25 11:34:30.906387 [Info] - Ensuring that time sync is enabled...
+2025-07-25 11:34:31.412074 [Debug] - RunShellCommand - sudo apt -y purge ntp ntpdate ntpsec-ntpdate - return: 0; error - 
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+
+2025-07-25 11:34:31.412100 [Debug] - TimeSync System Command Success. Cmd: sudo apt -y purge ntp ntpdate ntpsec-ntpdate
+2025-07-25 11:34:31.905351 [Debug] - RunShellCommand - sudo apt install -y systemd-timesyncd - return: 0; error - 
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+
+2025-07-25 11:34:31.905375 [Debug] - TimeSync System Command Success. Cmd: sudo apt install -y systemd-timesyncd
+2025-07-25 11:34:31.994655 [Debug] - RunShellCommand - sudo timedatectl status - return: 0; error - 
+2025-07-25 11:34:31.994679 [Debug] - TimeSync Status:
+               Local time: Fr 2025-07-25 11:34:31 CEST
+           Universal time: Fr 2025-07-25 09:34:31 UTC
+                 RTC time: Fr 2025-07-25 09:34:32
+                Time zone: Europe/Berlin (CEST, +0200)
+System clock synchronized: yes
+              NTP service: active
+          RTC in local TZ: no
+ 
+2025-07-25 11:34:32.355841 [Debug] - RunShellCommand - sudo systemctl daemon-reload - return: 0; error - 
+2025-07-25 11:34:32.355866 [Debug] - TimeSync System Command Success. Cmd: sudo systemctl daemon-reload
+2025-07-25 11:34:32.724194 [Debug] - RunShellCommand - sudo systemctl enable systemd-timesyncd - return: 0; error - 
+2025-07-25 11:34:32.724218 [Debug] - TimeSync System Command Success. Cmd: sudo systemctl enable systemd-timesyncd
+2025-07-25 11:34:32.827385 [Debug] - RunShellCommand - sudo systemctl restart systemd-timesyncd - return: 0; error - 
+2025-07-25 11:34:32.827411 [Debug] - TimeSync System Command Success. Cmd: sudo systemctl restart systemd-timesyncd
+2025-07-25 11:34:32.858762 [Debug] - RunShellCommand - sudo timedatectl set-ntp on - return: 0; error - 
+2025-07-25 11:34:32.858789 [Debug] - TimeSync System Command Success. Cmd: sudo timedatectl set-ntp on
+2025-07-25 11:34:32.881571 [Debug] - RunShellCommand - sudo timedatectl status - return: 0; error - 
+2025-07-25 11:34:32.881595 [Debug] - TimeSync Status:
+               Local time: Fr 2025-07-25 11:34:32 CEST
+           Universal time: Fr 2025-07-25 09:34:32 UTC
+                 RTC time: Fr 2025-07-25 09:34:32
+                Time zone: Europe/Berlin (CEST, +0200)
+System clock synchronized: yes
+              NTP service: active
+          RTC in local TZ: no
+ 
+2025-07-25 11:34:32.881625 [Debug] - Starting discovery.
+2025-07-25 11:34:32.881634 [Debug] - Discovery - Service Files
+2025-07-25 11:34:32.881698 [Debug] -  /etc/systemd/system/dbus-org.freedesktop.timesync1.service
+2025-07-25 11:34:32.881730 [Debug] -  /etc/systemd/system/getty.target.wants
+2025-07-25 11:34:32.881774 [Debug] -    /etc/systemd/system/getty.target.wants/getty@tty1.service
+2025-07-25 11:34:32.881796 [Debug] -  /etc/systemd/system/klipper.service
+2025-07-25 11:34:32.881815 [Debug] -  /etc/systemd/system/moonraker.service
+2025-07-25 11:34:32.881832 [Debug] -  /etc/systemd/system/multi-user.target.wants
+2025-07-25 11:34:32.881878 [Debug] -    /etc/systemd/system/multi-user.target.wants/console-setup.service
+2025-07-25 11:34:32.881899 [Debug] -    /etc/systemd/system/multi-user.target.wants/cron.service
+2025-07-25 11:34:32.881917 [Debug] -    /etc/systemd/system/multi-user.target.wants/e2scrub_reap.service
+2025-07-25 11:34:32.881935 [Debug] -    /etc/systemd/system/multi-user.target.wants/klipper.service
+2025-07-25 11:34:32.881953 [Debug] -    /etc/systemd/system/multi-user.target.wants/moonraker.service
+2025-07-25 11:34:32.881971 [Debug] -    /etc/systemd/system/multi-user.target.wants/networking.service
+2025-07-25 11:34:32.881989 [Debug] -    /etc/systemd/system/multi-user.target.wants/nginx.service
+2025-07-25 11:34:32.882007 [Debug] -    /etc/systemd/system/multi-user.target.wants/remote-fs.target
+2025-07-25 11:34:32.882024 [Debug] -    /etc/systemd/system/multi-user.target.wants/ssh.service
+2025-07-25 11:34:32.882043 [Debug] -  /etc/systemd/system/network-online.target.wants
+2025-07-25 11:34:32.882081 [Debug] -    /etc/systemd/system/network-online.target.wants/networking.service
+2025-07-25 11:34:32.882100 [Debug] -  /etc/systemd/system/sshd.service
+2025-07-25 11:34:32.882118 [Debug] -  /etc/systemd/system/sysinit.target.wants
+2025-07-25 11:34:32.882156 [Debug] -    /etc/systemd/system/sysinit.target.wants/apparmor.service
+2025-07-25 11:34:32.882175 [Debug] -    /etc/systemd/system/sysinit.target.wants/keyboard-setup.service
+2025-07-25 11:34:32.882202 [Debug] -    /etc/systemd/system/sysinit.target.wants/systemd-pstore.service
+2025-07-25 11:34:32.882219 [Debug] -    /etc/systemd/system/sysinit.target.wants/systemd-timesyncd.service
+2025-07-25 11:34:32.882238 [Debug] -  /etc/systemd/system/timers.target.wants
+2025-07-25 11:34:32.882279 [Debug] -    /etc/systemd/system/timers.target.wants/apt-daily-upgrade.timer
+2025-07-25 11:34:32.882299 [Debug] -    /etc/systemd/system/timers.target.wants/apt-daily.timer
+2025-07-25 11:34:32.882317 [Debug] -    /etc/systemd/system/timers.target.wants/dpkg-db-backup.timer
+2025-07-25 11:34:32.882387 [Debug] -    /etc/systemd/system/timers.target.wants/e2scrub_all.timer
+2025-07-25 11:34:32.882407 [Debug] -    /etc/systemd/system/timers.target.wants/fstrim.timer
+2025-07-25 11:34:32.882426 [Debug] -    /etc/systemd/system/timers.target.wants/logrotate.timer
+2025-07-25 11:34:32.882445 [Debug] -    /etc/systemd/system/timers.target.wants/man-db.timer
+2025-07-25 11:34:32.882604 [Debug] - Discovery - Config Files In Home Path
+2025-07-25 11:34:32.919051 [Debug] -            /home/jkuntzsch/kiauh/kiauh/components/moonraker/assets/moonraker.conf
+2025-07-25 11:34:32.919451 [Debug] -            /home/jkuntzsch/kiauh/kiauh/components/webui_client/assets/common_vars.conf
+2025-07-25 11:34:32.919480 [Debug] -            /home/jkuntzsch/kiauh/kiauh/components/webui_client/assets/upstreams.conf
+2025-07-25 11:34:32.922144 [Debug] -            /home/jkuntzsch/kiauh/kiauh/extensions/pretty_gcode/assets/pgcode.local.conf
+2025-07-25 11:34:32.923049 [Debug] -      /home/jkuntzsch/kiauh/resources/common_vars.conf
+2025-07-25 11:34:32.923184 [Debug] -      /home/jkuntzsch/kiauh/resources/moonraker.conf
+2025-07-25 11:34:32.923279 [Debug] -      /home/jkuntzsch/kiauh/resources/upstreams.conf
+2025-07-25 11:34:32.923727 [Debug] -        /home/jkuntzsch/kiauh-backups/printer-data-backups/printer_data-20250724-231041/moonraker.conf
+2025-07-25 11:34:32.958016 [Debug] -    /home/jkuntzsch/mainsail-config/mainsail-moonraker-update.conf
+2025-07-25 11:34:32.965776 [Debug] -      /home/jkuntzsch/moonraker/docs/moonraker.conf
+2025-07-25 11:34:32.968000 [Debug] -          /home/jkuntzsch/moonraker/tests/assets/moonraker/base_server.conf
+2025-07-25 11:34:32.968022 [Debug] -          /home/jkuntzsch/moonraker/tests/assets/moonraker/base_server_ssl.conf
+2025-07-25 11:34:32.968040 [Debug] -          /home/jkuntzsch/moonraker/tests/assets/moonraker/invalid_config.conf
+2025-07-25 11:34:32.968073 [Debug] -          /home/jkuntzsch/moonraker/tests/assets/moonraker/supplemental.conf
+2025-07-25 11:34:32.968089 [Debug] -          /home/jkuntzsch/moonraker/tests/assets/moonraker/unparsed_server.conf
+2025-07-25 11:34:32.982415 [Debug] -      /home/jkuntzsch/printer_data/config/moonraker.conf
+2025-07-25 11:34:32.983585 [Debug] - Searching for moonraker config for /etc/systemd/system/moonraker.service
+2025-07-25 11:34:32.983690 [Debug] - Found possible path line: EnvironmentFile=/home/jkuntzsch/printer_data/systemd/moonraker.env
+
+2025-07-25 11:34:32.983707 [Debug] - Parsed moonraker config path is [/home/jkuntzsch/printer_data/systemd/moonraker.env] - From env parse.
+2025-07-25 11:34:32.983897 [Debug] - Moonraker config found in /home/jkuntzsch/printer_data/config
+2025-07-25 11:34:32.983925 [Debug] - Moonraker service [/etc/systemd/system/moonraker.service] matched to [/home/jkuntzsch/printer_data/config/moonraker.conf]
+2025-07-25 11:34:32.984208 [Info] - Only one moonraker instance was found, so we are using it! [moonraker.service:/home/jkuntzsch/printer_data/config/moonraker.conf]
+2025-07-25 11:34:32.984375 [Info] - Starting configuration...
+2025-07-25 11:34:32.984386 [Debug] - Moonraker Service File Name: moonraker.service
+2025-07-25 11:34:32.984410 [Debug] - Printer data folder: /home/jkuntzsch/printer_data
+2025-07-25 11:34:32.985057 [Info] - Found moonraker port 7125 in config file.
+2025-07-25 11:34:32.985185 [Info] - Configured. Service File Path: /etc/systemd/system/mobileraker.service, Config Dir: /home/jkuntzsch/printer_data/config, Logs: /home/jkuntzsch/printer_data/logs
+2025-07-25 11:34:32.985296 [Info] - Starting Config Writer...
+2025-07-25 11:34:32.986035 [Debug] - Mobileraker Config Path: /home/jkuntzsch/printer_data/config/mobileraker.conf
+2025-07-25 11:34:32.986155 [Info] - Ensuring mobileraker config file exists and is setup correctly.
+2025-07-25 11:34:32.986387 [Info] - General section not found, creating it.
+2025-07-25 11:34:32.986615 [Warn] - Available Languages:
+2025-07-25 11:34:32.986793 [Info] -   1) de
+2025-07-25 11:34:32.986899 [Info] -   2) en
+2025-07-25 11:34:32.987003 [Info] -   3) fr
+2025-07-25 11:34:32.987107 [Info] -   4) hu
+2025-07-25 11:34:32.987211 [Info] -   5) uk
+2025-07-25 11:34:32.987460 [Info] -   6) ptbr
+2025-07-25 11:34:32.987576 [Info] -   7) zhhk
+2025-07-25 11:34:32.987845 [Info] -   8) zhcn
+2025-07-25 11:34:36.331960 [Info] - Selected language: de
+2025-07-25 11:34:36.331999 [Warn] - Note: The language selection can be changed in the mobileraker.conf file later.
+2025-07-25 11:34:36.332039 [Error] - Deprecation Warning: The selected language will only be used for app-versions below 2.7.1. For newer versions, the app will sync your mobile device language with the companion.
+2025-07-25 11:34:36.332319 [Warn] - No printer sections found in mobileraker.conf, adding a default one.
+2025-07-25 11:34:36.332356 [Info] - Do you want me to help you add a printer to the mobileraker.conf file or should I use the default settings?
+2025-07-25 11:34:38.103575 [Info] - Okay... I will guide you through the process of adding a printer to the config file.
+2025-07-25 11:34:38.103619 [Info] - Please provide the following information:
+2025-07-25 11:34:48.798897 [Info] - Printer Configuration for 'Ender3V3SE':
+2025-07-25 11:34:48.798951 [Info] -   name: Ender3V3SE
+2025-07-25 11:34:48.798973 [Info] -   moonraker_uri: 127.0.0.1
+2025-07-25 11:34:48.798992 [Info] -   moonraker_port: 7125
+2025-07-25 11:34:48.799010 [Info] -   moonraker_api_key: False
+2025-07-25 11:34:48.799032 [Info] -   snapshot_rotation: 0
+2025-07-25 11:34:52.958567 [Debug] - Writing config section: general
+2025-07-25 11:34:52.958612 [Debug] - Writing Option: language: de
+2025-07-25 11:34:52.958625 [Debug] - Checking for helpers: general.language
+2025-07-25 11:34:52.958635 [Debug] - Writing helper: # !!! DEPRECATED. The app now syncs the app's language to the companion
+2025-07-25 11:34:52.958677 [Debug] - Writing helper: # one of the supported languages defined in i18n.py#languages (de,en,...)
+2025-07-25 11:34:52.958686 [Debug] - Writing helper: # !!! For users from the UK: entering 'uk' will resolve to Ukrainian language, not English. Use 'en' for English!
+2025-07-25 11:34:52.958693 [Debug] - Writing helper: # Default: en
+2025-07-25 11:34:52.958711 [Debug] - Writing Option: timezone: CEST
+2025-07-25 11:34:52.958720 [Debug] - Checking for helpers: general.timezone
+2025-07-25 11:34:52.958728 [Debug] - Writing helper: # The system's timezone e.g. Europe/Berlin for Berlin time or US/Central.
+2025-07-25 11:34:52.958735 [Debug] - Writing helper: # For more values see https://gist.github.com/heyalexej/8bf688fd67d7199be4a1682b3eec7568
+2025-07-25 11:34:52.958745 [Debug] - Writing helper: # Default: Tries to use system timezone
+2025-07-25 11:34:52.958753 [Debug] - Writing helper: # Optional
+2025-07-25 11:34:52.958767 [Debug] - Writing Option: eta_format: %%d.%%m.%%Y, %%H:%%M:%%S
+2025-07-25 11:34:52.958776 [Debug] - Checking for helpers: general.eta_format
+2025-07-25 11:34:52.958784 [Debug] - Writing helper: # Format used for eta and adaptive_eta placeholder variables
+2025-07-25 11:34:52.958807 [Debug] - Writing helper: # For available options see https://strftime.org/
+2025-07-25 11:34:52.958816 [Debug] - Writing helper: # Note that you will have to escape the % char by using a 2nd one e.g.: %d/%m/%Y -> %%d/%%m/%%Y
+2025-07-25 11:34:52.958823 [Debug] - Writing helper: # Default: %%d.%%m.%%Y, %%H:%%M:%%S
+2025-07-25 11:34:52.958829 [Debug] - Writing helper: # Optional
+2025-07-25 11:34:52.958844 [Debug] - Writing Option: include_snapshot: True
+2025-07-25 11:34:52.958852 [Debug] - Checking for helpers: general.include_snapshot
+2025-07-25 11:34:52.958859 [Debug] - Writing helper: # !! SUPPORTER ONLY - This feature requires beeing a supporter of Mobileraker as of now!
+2025-07-25 11:34:52.958866 [Debug] - Writing helper: # Include a snapshot of the webcam in any print status/progress update notifications
+2025-07-25 11:34:52.958873 [Debug] - Writing helper: # Default: True
+2025-07-25 11:34:52.958879 [Debug] - Writing helper: # Optional
+2025-07-25 11:34:52.958899 [Debug] - Writing config section: printer Ender3V3SE
+2025-07-25 11:34:52.958914 [Debug] - Writing Option: moonraker_uri: ws://127.0.0.1:7125/websocket
+2025-07-25 11:34:52.958931 [Debug] - Checking for helpers: printer.moonraker_uri
+2025-07-25 11:34:52.958938 [Debug] - Writing helper: # Define the uri to the moonraker instance.
+2025-07-25 11:34:52.958944 [Debug] - Writing helper: # Default value: ws://127.0.0.1:7125/websocket
+2025-07-25 11:34:52.958951 [Debug] - Writing helper: # Optional
+2025-07-25 11:34:52.958966 [Debug] - Writing Option: moonraker_api_key: False
+2025-07-25 11:34:52.958974 [Debug] - Checking for helpers: printer.moonraker_api_key
+2025-07-25 11:34:52.958981 [Debug] - Writing helper: # Moonraker API key if force_logins or trusted clients is active!
+2025-07-25 11:34:52.958987 [Debug] - Writing helper: # Default value: False
+2025-07-25 11:34:52.958993 [Debug] - Writing helper: # Optional
+2025-07-25 11:34:52.959004 [Debug] - Writing Option: snapshot_uri: http://127.0.0.1/webcam/?action=snapshot
+2025-07-25 11:34:52.959012 [Debug] - Checking for helpers: printer.snapshot_uri
+2025-07-25 11:34:52.959019 [Debug] - Writing helper: # !! SUPPORTER ONLY - This feature requires beeing a supporter of Mobileraker as of now!
+2025-07-25 11:34:52.959026 [Debug] - Writing helper: # The ABSOLUT url to the webcam, the companion should make a screenshot of.
+2025-07-25 11:34:52.959037 [Debug] - Writing helper: # Example MJPEG SnapShot url: http://192.168.178.135/webcam/?action=snapshot
+2025-07-25 11:34:52.959043 [Debug] - Writing helper: # Optional
+2025-07-25 11:34:52.959054 [Debug] - Writing Option: snapshot_rotation: 0
+2025-07-25 11:34:52.959063 [Debug] - Checking for helpers: printer.snapshot_rotation
+2025-07-25 11:34:52.959070 [Debug] - Writing helper: # !! SUPPORTER ONLY - This feature requires beeing a supporter of Mobileraker as of now!
+2025-07-25 11:34:52.959076 [Debug] - Writing helper: # The rotation of the snapshot in degrees
+2025-07-25 11:34:52.959082 [Debug] - Writing helper: # Default value: 0
+2025-07-25 11:34:52.959089 [Debug] - Writing helper: # Valud Values: 0,90,180,270
+2025-07-25 11:34:52.959095 [Debug] - Writing helper: # Optional
+2025-07-25 11:34:52.959106 [Debug] - Writing Option: ignore_filament_sensors: 
+2025-07-25 11:34:52.959113 [Debug] - Checking for helpers: printer.ignore_filament_sensors
+2025-07-25 11:34:52.959120 [Debug] - Writing helper: # Comma separated list of filament sensors to ignore, ignored filament sensors do not trigger
+2025-07-25 11:34:52.959126 [Debug] - Writing helper: # a notification if they are triggered. This is useful if you have a filament sensor that is used
+2025-07-25 11:34:52.959133 [Debug] - Writing helper: # in a MMU setup like ERCF.
+2025-07-25 11:34:52.959139 [Debug] - Writing helper: # IMPORTANT, do not include the sensor type. E.g. if your sensor is configured
+2025-07-25 11:34:52.959195 [Debug] - Writing helper: # like: [filament_switch_sensor printhead_sensor] add `printhead_sensor` to the list.
+2025-07-25 11:34:52.959203 [Debug] - Writing helper: # Default: empty
+2025-07-25 11:34:52.959214 [Debug] - Writing helper: # Optional
+2025-07-25 11:34:52.959358 [Info] - Wrote mobileraker config file to: /home/jkuntzsch/printer_data/config/mobileraker.conf
+2025-07-25 11:34:52.959457 [Info] - Config Writer Completed.
+2025-07-25 11:34:52.959514 [Debug] - Updating file ownership for [/home/jkuntzsch/mobileraker_companion] to [jkuntzsch]...
+2025-07-25 11:34:52.963720 [Debug] - Updating file ownership for [/home/jkuntzsch/printer_data/config/mobileraker.conf] to [jkuntzsch]...
+2025-07-25 11:34:52.963846 [Debug] - Updating file ownership for [/home/jkuntzsch/printer_data/config/moonraker.conf] to [jkuntzsch]...
+2025-07-25 11:34:52.964072 [Info] - Setting Up System Service...
+2025-07-25 11:34:52.964112 [Debug] - Service config file contents to write:     # Mobileraker Companion Service File
+    [Unit]
+    Description=Companion app to enable push notifications via mobileraker
+    # Start after network and moonraker has started.
+    After=network-online.target moonraker.service
+
+    [Install]
+    WantedBy=multi-user.target
+
+    # Simple service, targeting the user that was used to install the service, simply running our moonraker py host script.
+    [Service]
+    Type=simple
+    User=jkuntzsch
+    WorkingDirectory=/home/jkuntzsch/mobileraker_companion
+    ExecStart=/home/jkuntzsch/mobileraker-env/bin/python3 /home/jkuntzsch/mobileraker_companion/mobileraker.py -l /home/jkuntzsch/printer_data/logs -c /home/jkuntzsch/printer_data/config/mobileraker.conf
+    Restart=always
+    # Since we will only restart on a fatal Logger.Error, set the restart time to be a bit higher, so we don't spin and spam.
+    RestartSec=10
+
+2025-07-25 11:34:52.964228 [Info] - Creating service file /etc/systemd/system/mobileraker.service...
+2025-07-25 11:34:52.964442 [Info] - Registering service...
+2025-07-25 11:34:53.297386 [Debug] - RunShellCommand - systemctl enable mobileraker - return: 0; error - Created symlink /etc/systemd/system/multi-user.target.wants/mobileraker.service → /etc/systemd/system/mobileraker.service.
+
+2025-07-25 11:34:53.635414 [Debug] - RunShellCommand - systemctl daemon-reload - return: 0; error - 
+2025-07-25 11:34:53.635465 [Info] - Starting service...
+2025-07-25 11:34:53.669794 [Debug] - RunShellCommand - systemctl restart mobileraker.service - return: 0; error - 
+2025-07-25 11:34:53.670011 [Info] - Service setup and start complete!
+2025-07-25 11:34:53.670161 [Info] - Adding service to moonraker asv file...
+2025-07-25 11:34:53.674537 [Info] - Added service to moonraker asv file.
+2025-07-25 11:34:53.674836 [Info] -   ~~~ Mobileraker Companion installation Complete ~~~
+2025-07-25 11:34:53.674958 [Info] -                    Happy Printing!
+2025-07-25 11:34:53.675065 [Error] -                           <3
